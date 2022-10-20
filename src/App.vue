@@ -9,76 +9,123 @@
       items-center
       font-SpaceGrotesk
       max-w-7xl
+      container
     "
   >
     <!-- graident div -->
-    <div id="gradient" class="w-full lg:w-[483px] lg:min-h-screen">
+    <div id="gradient" class="w-full lg:w-[483px] h-[10%] lg:min-h-screen">
       <div
         class="
           flex flex-col
           justify-center
           items-center
           space-y-10
-          mt-20
-          lg:translate-x-20
-          basis-1/4
+          mt-4
+          lg:mt-20 lg:translate-x-20
         "
       >
         <!-- card front   -->
-        <div class="relative">
+        <div
+          class="
+            relative
+            shrink
+            overflow-hidden
+            order-2
+            lg:order-1
+            translate-y-20
+            lg:translate-y-0
+            z-10
+          "
+        >
           <img
             class="w-[286px] lg:w-[447px] lg:h-[245px]"
             src="./assets/images/bg-card-front.png"
             alt=""
           />
-          <div class="absolute top-5 md:top-10 left-5">
-            <img src="./assets/images/card-logo.svg" alt="" />
-            <div class="mt-4 lg:mt-10">
-              <h1
-                v-if="number.length"
-                class="
-                  text-white text-xl
-                  font-bold
-                  translate-x-5
-                  tracking-widest
-                "
-              >
-                {{ number }}
-              </h1>
-              <h1 v-else class="text-white text-xl font-bold tracking-widest">
-                0000 0000 0000 0000
-              </h1>
-              <div
-                class="
-                  flex
-                  justify-between
-                  items-center
-                  text-LightGrey
-                  mt-5
-                  md:mt-16
-                  tracking-widest
-                  relative
-                "
-              >
-                <p
-                  class="uppercase max-w-sm overflow-hidden text-[12px]"
-                  v-if="name.length"
-                >
-                  {{ name }}
-                </p>
-                <p class="uppercase overflow-hidden text-[12px]" v-else>
-                  AHMAD ALHARBI
-                </p>
-                <p class="text-[12px] md:translate-x-36" v-if="mm || yy">
-                  {{ mm }}/{{ yy }}
-                </p>
-                <p class="text-[12px] md:translate-x-36" v-else>00/00</p>
-              </div>
-            </div>
+          <div
+            class="
+              absolute
+              text-left
+              left-0
+              right-0
+              bottom-10
+              lg:bottom-20
+              text-white
+            "
+          >
+            <h1
+              v-if="number.length"
+              class="
+                text-white text-md
+                lg:text-2xl
+                font-bold
+                tracking-widest
+                ml-3
+                lg:ml-8
+              "
+            >
+              {{ number }}
+            </h1>
+            <h1
+              v-else
+              class="
+                text-white text-md
+                lg:text-2xl
+                font-bold
+                tracking-widest
+                ml-3
+                lg:ml-8
+              "
+            >
+              0000 0000 0000 0000
+            </h1>
+          </div>
+
+          <div class="absolute bottom-1 left-2 text-white">
+            <p
+              class="
+                uppercase
+                max-w-sm
+                overflow-hidden
+                text-[12px]
+                tracking-widest
+              "
+              v-if="name.length"
+            >
+              {{ name }}
+            </p>
+            <p
+              class="uppercase overflow-hidden text-[12px] tracking-widest"
+              v-else
+            >
+              AHMAD ALHARBI
+            </p>
+          </div>
+          <div class="absolute bottom-1 right-2 text-white">
+            <p class="text-[12px]" v-if="mm || yy">{{ mm }}/{{ yy }}</p>
+            <p class="text-[12px]" v-else>00/00</p>
+          </div>
+          <div class="absolute top-5 left-5">
+            <img
+              class="w-[50px] lg:w-full"
+              src="./assets/images/card-logo.svg"
+              alt=""
+            />
           </div>
         </div>
+
         <!-- card back   -->
-        <div class="md:translate-x-40">
+        <div
+          class="
+            lg:translate-x-20
+            order-1
+            lg:order-2
+            translate-y-36
+            lg:translate-y-0
+            translate-x-10
+            z-0
+          "
+        >
           <div class="relative">
             <img
               class="w-[286px] lg:w-[447px] lg:h-[245px]"
@@ -87,13 +134,31 @@
             />
             <p
               v-if="cvc"
-              class="absolute top-[44%] right-12 text-white tracking-widest"
+              class="
+                absolute
+                top-[42%]
+                lg:top-[44%]
+                right-6
+                lg:right-12
+                text-white text-sm
+                lg:text-md
+                tracking-widest
+              "
             >
               {{ cvc }}
             </p>
             <p
               v-else
-              class="absolute top-[44%] right-12 text-white tracking-widest"
+              class="
+                absolute
+                top-[42%]
+                lg:top-[44%]
+                right-6
+                lg:right-12
+                text-white text-sm
+                lg:text-md
+                tracking-widest
+              "
             >
               000
             </p>
@@ -102,7 +167,7 @@
       </div>
     </div>
     <!-- form div -->
-    <div class="flex-initial shrink-0">
+    <div class="flex-initial shrink-0 pr-5 mt-28 lg:mt-0">
       <form class="flex flex-col justify-center items-center">
         <div class="text-left my-6">
           <label
