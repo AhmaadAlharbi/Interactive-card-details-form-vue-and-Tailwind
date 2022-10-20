@@ -4,14 +4,14 @@
 
 @tailwind utilities;
 
-#gradient {
+#gradient1 {
   background-image: url("./images/bg-main-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media(max-width:800px){
-  #gradient {
-    background-image: url("./images/bg-main-mobile.png");
 
+@media (max-width: 800px) {
+  #gradient1 {
+    background-image: url("./images/bg-main-mobile.png");
   }
 }
