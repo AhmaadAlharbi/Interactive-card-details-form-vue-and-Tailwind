@@ -1,72 +1,100 @@
 <template>
+  <!-- https://github.com/paladinescamila/Interactive-Card-Details-Form -->
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <div class="flex justify-between items-center container font-SpaceGrotesk">
+  <div
+    class="
+      flex flex-col
+      lg:flex-row
+      justify-between
+      items-center
+      font-SpaceGrotesk
+      max-w-7xl
+    "
+  >
     <!-- graident div -->
-    <div id="gradient" class="w-[483px] h-screen">
+    <div id="gradient" class="w-full lg:w-[483px] lg:min-h-screen">
       <div
         class="
           flex flex-col
           justify-center
           items-center
           space-y-10
-          mt-40
-          translate-x-40
+          mt-20
+          lg:translate-x-20
+          basis-1/4
         "
       >
         <!-- card front   -->
         <div class="relative">
-          <img src="./assets/images/bg-card-front.png" alt="" />
-          <div class="absolute top-10 left-5">
+          <img
+            class="w-[286px] lg:w-[447px] lg:h-[245px]"
+            src="./assets/images/bg-card-front.png"
+            alt=""
+          />
+          <div class="absolute top-5 md:top-10 left-5">
             <img src="./assets/images/card-logo.svg" alt="" />
-            <div class="mt-5">
+            <div class="mt-4 lg:mt-10">
               <h1
                 v-if="number.length"
                 class="
-                  text-white text-2xl
+                  text-white text-xl
                   font-bold
                   translate-x-5
-                  mt-10
                   tracking-widest
                 "
               >
                 {{ number }}
               </h1>
-              <h1
-                v-else
-                class="
-                  text-white text-2xl
-                  font-bold
-                  translate-x-5
-                  mt-10
-                  tracking-widest
-                "
-              >
+              <h1 v-else class="text-white text-xl font-bold tracking-widest">
                 0000 0000 0000 0000
               </h1>
               <div
                 class="
                   flex
-                  mt-5
                   justify-between
                   items-center
                   text-LightGrey
-                  font-bold
-                  translate-x-5
+                  mt-5
+                  md:mt-16
                   tracking-widest
+                  relative
                 "
               >
-                <p class="uppercase" v-if="name.length">{{ name }}</p>
-                <p v-else>AHMAD ALHARBI</p>
-                <p>00/00</p>
+                <p
+                  class="uppercase max-w-sm overflow-hidden text-[12px]"
+                  v-if="name.length"
+                >
+                  {{ name }}
+                </p>
+                <p class="uppercase overflow-hidden text-[12px]" v-else>
+                  AHMAD ALHARBI
+                </p>
+                <p class="text-[12px] md:translate-x-36" v-if="mm || yy">
+                  {{ mm }}/{{ yy }}
+                </p>
+                <p class="text-[12px] md:translate-x-36" v-else>00/00</p>
               </div>
             </div>
           </div>
         </div>
         <!-- card back   -->
-        <div class="translate-x-40">
+        <div class="md:translate-x-40">
           <div class="relative">
-            <img class="" src="./assets/images/bg-card-back.png" alt="" />
-            <p class="absolute top-[44%] right-12 text-white tracking-widest">
+            <img
+              class="w-[286px] lg:w-[447px] lg:h-[245px]"
+              src="./assets/images/bg-card-back.png"
+              alt=""
+            />
+            <p
+              v-if="cvc"
+              class="absolute top-[44%] right-12 text-white tracking-widest"
+            >
+              {{ cvc }}
+            </p>
+            <p
+              v-else
+              class="absolute top-[44%] right-12 text-white tracking-widest"
+            >
               000
             </p>
           </div>
@@ -74,7 +102,7 @@
       </div>
     </div>
     <!-- form div -->
-    <div>
+    <div class="flex-initial shrink-0">
       <form class="flex flex-col justify-center items-center">
         <div class="text-left my-6">
           <label
@@ -139,14 +167,16 @@
                 font-bold
                 mb-2
               "
-              >Exp.Date .. (MM/YY)</label
+              >Exp.Date <span class="ml-1"> (MM/YY)</span></label
             >
             <input
+              v-model="mm"
               type="text"
               class="w-[80px] border-gray-300 rounded-2xl placeholder-LightGrey"
               placeholder="MM"
             />
             <input
+              v-model="yy"
               type="text"
               class="
                 w-[80px]
@@ -172,6 +202,7 @@
               >CVC</label
             >
             <input
+              v-model="cvc"
               type="text"
               class="
                 w-[191px]
@@ -209,6 +240,9 @@ export default {
     return {
       name: "",
       number: "",
+      mm: "",
+      yy: "",
+      cvc: "",
     };
   },
 };

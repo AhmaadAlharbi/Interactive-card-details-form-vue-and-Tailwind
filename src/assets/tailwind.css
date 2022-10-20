@@ -9,3 +9,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media(max-width:375px){
+  #gradient {
+    background-image: url("./images/bg-main-mobile.png");
+
+  }
+}
