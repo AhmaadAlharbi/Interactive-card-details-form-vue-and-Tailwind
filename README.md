@@ -15,7 +15,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
+![Design preview for the News homepage coding challenge](./design/complete-state-desktop.jpg)
 
 
 
