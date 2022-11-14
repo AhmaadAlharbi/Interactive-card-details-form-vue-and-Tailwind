@@ -1,6 +1,6 @@
 # Frontend Mentor - News homepage solution
 
-This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
+This is a solution to the [Interactive-card-details-form tailwind](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
 
 ## Overview
@@ -15,7 +15,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for the News homepage coding challenge](./design/complete-state-desktop.jpg)
+![Design preview for Interactive-card-details-form tailwind](./design/complete-state-desktop.jpg)
 
 
 
