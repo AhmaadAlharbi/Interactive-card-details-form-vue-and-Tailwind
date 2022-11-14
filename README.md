@@ -15,7 +15,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for Interactive-card-details-form tailwind](./design/complete-state-desktop.jpg)
+![Design preview for Interactive-card-details-form tailwind](./design/desktop-designjpg)
 
 
 
