@@ -1,5 +1,4 @@
-# Frontend Mentor - News homepage solution
-
+# Frontend Mentor - Interactive-card-details-form tailwind
 This is a solution to the [Interactive-card-details-form tailwind](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
 
